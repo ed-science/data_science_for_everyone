@@ -38,7 +38,7 @@ grid = grid.replace(-1, 999)
 
 # Classify our travel times into 5 minute classes until 200 minutes
 # Create a list of values where minumum value is 5, maximum value is 200 and step is 5.
-breaks = [x for x in range(5, 200, 5)]
+breaks = list(range(5, 200, 5))
 
 # Initialize the classifier and apply it
 classifier = ps.User_Defined.make(bins=breaks)

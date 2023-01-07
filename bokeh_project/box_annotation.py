@@ -4,8 +4,8 @@ from bokeh.models import BoxAnnotation
 import random
 
 # Generate Random data
-x = list(range(0, 51))
-y = random.sample(range(0,100), 51)
+x = list(range(51))
+y = random.sample(range(100), 51)
 
 # Create Plot
 p = figure(title = "Box annotation example")

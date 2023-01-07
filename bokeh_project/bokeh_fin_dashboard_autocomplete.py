@@ -76,7 +76,7 @@ def update():
     df = get_data(t1,t2)
     source.data = df
     stats_source.data = round(df.describe().reset_index(), 2)
-    corr.title.text = "%s returns vs. %s returns" % (t1, t2)
+    corr.title.text = f"{t1} returns vs. {t2} returns"
     ts1.title.text, ts2.title.text = t1, t2
 
 ticker1.on_change('value', ticker1_change)

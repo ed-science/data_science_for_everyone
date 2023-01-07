@@ -29,7 +29,7 @@ def update():
     new_data=dict(x=[datetime.now()],y=[create_value()])
     source.stream(new_data,rollover=200)
     # print(source.data)
-    f.title.text = "Now Streaming %s Data" % select.value
+    f.title.text = f"Now Streaming {select.value} Data"
 
 
 def update_intermediate(attr, old, new):

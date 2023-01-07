@@ -32,7 +32,7 @@ p.line(x="x",y="y", source=source)
 def update():
 	new_data = dict(x=[datetime.now()],y=[create_value()])
 	source.stream(new_data, rollover=200)
-	p.title.text="Now Streaming %s Data" % select.value
+	p.title.text = f"Now Streaming {select.value} Data"
 
 # Callback Function
 def update_intermed(attrname, old, new):

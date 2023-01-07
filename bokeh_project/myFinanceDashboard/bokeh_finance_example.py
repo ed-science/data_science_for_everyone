@@ -78,7 +78,7 @@ def update(selected=None):
 
     update_stats(df, t1, t2)
 
-    corr.title.text = '%s returns vs. %s returns' % (t1, t2)
+    corr.title.text = f'{t1} returns vs. {t2} returns'
     ts1.title.text, ts2.title.text = t1, t2
 
 def update_stats(data, t1, t2):
@@ -90,8 +90,7 @@ ticker2.on_change('value', ticker2_change)
 def selection_change(attrname, old, new):
     t1, t2 = ticker1.value, ticker2.value
     data = get_data(t1, t2)
-    selected = source.selected.indices
-    if selected:
+    if selected := source.selected.indices:
         data = data.iloc[selected, :]
     update_stats(data, t1, t2)
 

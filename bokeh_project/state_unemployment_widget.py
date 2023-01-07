@@ -14,8 +14,8 @@ palette = tuple(reversed(palette))
 color_mapper = LogColorMapper(palette=palette)
 
 # Select
-data = dict()
-state_codes = list(set([county['state'] for code, county in counties.items()]))
+data = {}
+state_codes = list({county['state'] for code, county in counties.items()})
 select = Select(title="Please Select a State:", value="ar", options=state_codes)
 def call_back(attr, old, new):
     global counties
