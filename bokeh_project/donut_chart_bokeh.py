@@ -12,13 +12,16 @@ output_file("pie.html")
 value = [10,20,30,40]*5
 
 data = {
-	'name': ["A", "B","C","D"]*5,
-	'value': value,
-	'angle': [v/sum(value)*2*pi for v in value],
-	'cumulative_angle':[(sum(value[0:i+1])- (item/2))/sum(value)*2*pi for i,item in enumerate(value)],
-	'percentage': [d/sum(value)*100 for d in value],
-	'color': Category10[5][1:]*5
-	}
+    'name': ["A", "B", "C", "D"] * 5,
+    'value': value,
+    'angle': [v / sum(value) * 2 * pi for v in value],
+    'cumulative_angle': [
+        (sum(value[: i + 1]) - item / 2) / sum(value) * 2 * pi
+        for i, item in enumerate(value)
+    ],
+    'percentage': [d / sum(value) * 100 for d in value],
+    'color': Category10[5][1:] * 5,
+}
 
 data['label'] = ["{:.0f}%".format(p) for p in data['percentage']]
 data['cos'] = np.cos(data['cumulative_angle'])*0.3

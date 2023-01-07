@@ -8,6 +8,5 @@ callback = CustomJS(code="alert('You tapped a point on the graph!')")
 tap = TapTool(callback=callback)
 
 p = figure(plot_width=500, plot_height=500, tools=[tap])
-p.circle(x=x, y=y, size=10)
-
+p.circle(y=y, y=y, size=10)
 show(p)

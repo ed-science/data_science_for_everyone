@@ -7,7 +7,7 @@ Faker.seed(42)
 
 profile = [fake.profile() for _ in range(100)]
 df = pd.DataFrame(profile)
-df['age'] = [random.randrange(18, 65, 1) for i in range(100)]
+df['age'] = [random.randrange(18, 65, 1) for _ in range(100)]
 df.to_json("profiles.json")
 df.to_csv("profiles.csv", index=False)
 df.to_csv("profiles.tsv",sep="\t", index=False)

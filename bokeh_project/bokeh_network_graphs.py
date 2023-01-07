@@ -6,7 +6,7 @@ from bokeh.palettes import Spectral4
 
 G = nx.karate_club_graph()
 SAME_CLUB_COLOR, DIFFERENT_CLUB_COLOR = "navy", "red"
-edge_attr = dict()
+edge_attr = {}
 
 for start_node, end_node, _ in G.edges(data=True):
     edge_color = SAME_CLUB_COLOR if G.nodes[start_node]['club'] == G.nodes[end_node]['club'] else DIFFERENT_CLUB_COLOR
